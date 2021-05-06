@@ -1,0 +1,124 @@
+stackbitVersion: ~0.3.0
+dataDir: ''
+models:
+  8_base:
+    type: data
+    label: 8 Base
+    file: 8base/8base.yml
+    fields:
+      - type: object
+        name: functions
+        label: Functions
+        fields:
+          - type: object
+            name: triggerSchedule
+            label: Trigger Schedule
+            fields:
+              - type: object
+                name: handler
+                label: Handler
+                fields:
+                  - type: string
+                    name: code
+                    label: Code
+              - type: string
+                name: type
+                label: Type
+              - type: string
+                name: operation
+                label: Operation
+  manifest:
+    type: data
+    label: Manifest
+    file: public/manifest.json
+    fields:
+      - type: string
+        name: short_name
+        label: Short Name
+      - type: string
+        name: name
+        label: Name
+      - type: list
+        name: icons
+        label: Icons
+        items:
+          type: object
+          fields:
+            - type: string
+              name: src
+              label: Src
+            - type: string
+              name: sizes
+              label: Sizes
+            - type: string
+              name: type
+              label: Type
+      - type: string
+        name: start_url
+        label: Start Url
+      - type: string
+        name: display
+        label: Display
+      - type: string
+        name: theme_color
+        label: Theme Color
+      - type: string
+        name: background_color
+        label: Background Color
+  host:
+    type: data
+    label: Host
+    file: serverless/host.json
+    fields:
+      - type: string
+        name: version
+        label: Version
+      - type: object
+        name: extensionBundle
+        label: Extension Bundle
+        fields:
+          - type: string
+            name: id
+            label: Id
+          - type: string
+            name: version
+            label: Version
+  proxies:
+    type: data
+    label: Proxies
+    file: serverless/proxies.json
+    fields:
+      - type: string
+        name: $schema
+        label: Schema
+  serverles:
+    type: data
+    label: Serverles
+    folder: serverless
+    fields:
+      - type: list
+        name: bindings
+        label: Bindings
+        items:
+          type: object
+          fields:
+            - type: string
+              name: authLevel
+              label: Auth Level
+            - type: string
+              name: name
+              label: Name
+            - type: string
+              name: type
+              label: Type
+            - type: string
+              name: direction
+              label: Direction
+            - type: string
+              name: route
+              label: Route
+            - type: list
+              name: methods
+              label: Methods
+              items:
+                type: string
